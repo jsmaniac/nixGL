@@ -7,11 +7,12 @@
     defaultPackage.x86_64-linux =
       let pkgs = import nixpkgs { system = "x86_64-linux"; config = { allowUnfree = true; }; }; in
       (pkgs.callPackage ./nixGL.nix {
-        nvidiaVersion = "455.28";
         nvidiaVersionFile = null;
-        nvidiaHash = "03ysf61qrb272yqkn7bhn9d65lcfhmqc2c0dbh5prp5f2ndlkqg4";
+        nvidiaVersion = "455.28"; nvidiaHash = "03ysf61qrb272yqkn7bhn9d65lcfhmqc2c0dbh5prp5f2ndlkqg4";
+        # nvidiaVersion = "455.23.04"; nvidiaHash = "0rvbb9s4ijb0gyiscd93chbgim4lqmy4ksfy15b4abf078qk7q4g";
+        # …
         enable32bits = true;
-      }).nixGLIntel; #nixGLNvidia
+      }).nixGLIntel; # nixGLNvidia;
      # nixpkgs.stdenv.mkDerivation {
      #   builsInputs = [];
      #   { ## Nvidia informations.
